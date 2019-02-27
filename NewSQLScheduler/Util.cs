@@ -14,13 +14,12 @@ namespace NewSQLScheduler
     {
 
         //loga em arquivo de texto
-        public static void logInFile(string text, string path)
+        public static void logInFile(string text, string T)
         {
 
-            if (path == null)
-            {
-                path = (AppDomain.CurrentDomain.BaseDirectory) + DateTime.Now.ToString("YYYYMMDD") + ".log";
-            }
+
+         string path = (AppDomain.CurrentDomain.BaseDirectory) + "\\Log\\" + DateTime.Now.ToString("yyyyMMdd") + "_" + T + ".log";
+            
 
             string data = System.DateTime.Now.ToString();
             try
@@ -32,6 +31,7 @@ namespace NewSQLScheduler
             {
                 return;
             }
+
         }
 
 
@@ -81,7 +81,7 @@ namespace NewSQLScheduler
 
             catch (Exception e)
             {
-                return 1;
+                Util.logInFile(e.Message, "ERROR");
             }
 
             return 0;
