@@ -17,7 +17,7 @@ namespace NewSQLScheduler
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
-                new Service1()
+                new NewSQLScheduler()
             };
             ServiceBase.Run(ServicesToRun);
         }

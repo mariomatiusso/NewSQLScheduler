@@ -1,6 +1,6 @@
 ﻿namespace NewSQLScheduler
 {
-    partial class Service1
+    partial class NewSQLScheduler
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.ServiceName = "Service1";
+            // 
+            // NewSQLScheduler
+            // 
+            this.ServiceName = "NewSQLScheduler";
+
         }
 
         #endregion
