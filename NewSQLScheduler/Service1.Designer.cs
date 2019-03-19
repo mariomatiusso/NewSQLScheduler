@@ -1,6 +1,6 @@
-﻿namespace NewSQLScheduler
+﻿namespace NewSQLScheduler_Energia
 {
-    partial class NewSQLScheduler
+    partial class NewSQLScheduler_Energia
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             // 
-            // NewSQLScheduler
+            // NewSQLScheduler_Energia
             // 
-            this.ServiceName = "NewSQLScheduler";
+            this.ServiceName = "NewSQLScheduler_Energia";
 
         }
 

@@ -8,7 +8,7 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 
 
-namespace NewSQLScheduler
+namespace NewSQLScheduler_Energia
 {
     class Util
     {
@@ -64,7 +64,7 @@ namespace NewSQLScheduler
 
             try
             {
-                SqlConnection _con = new SqlConnection("Data Source=" + dataSource + ";User ID=" + user + "; Password=" + password + "; Connect Timeout=60");
+                SqlConnection _con = new SqlConnection("Data Source=" + dataSource + ";User ID=" + user + "; Password=" + password + "; Connect Timeout=1200");
                 _con.Open();
 
                 if (!useDataBase.Equals(string.Empty))
@@ -74,6 +74,7 @@ namespace NewSQLScheduler
                 }
 
                 SqlCommand cmd = new SqlCommand(sqlCommand, _con);
+                cmd.CommandTimeout = 1200;
                 cmd.ExecuteNonQuery();
 
                 _con.Close();

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.serviceProcessInstaller1 = new System.ServiceProcess.ServiceProcessInstaller();
-            this.NewSQLScheduler = new System.ServiceProcess.ServiceInstaller();
+            this.NewSQLScheduler_Energia = new System.ServiceProcess.ServiceInstaller();
             // 
             // serviceProcessInstaller1
             // 
@@ -38,23 +38,23 @@
             this.serviceProcessInstaller1.Username = null;
             this.serviceProcessInstaller1.AfterInstall += new System.Configuration.Install.InstallEventHandler(this.serviceProcessInstaller1_AfterInstall);
             // 
-            // NewSQLScheduler
+            // NewSQLScheduler_Energia
             // 
-            this.NewSQLScheduler.DelayedAutoStart = true;
-            this.NewSQLScheduler.ServiceName = "NewSQLScheduler";
-            this.NewSQLScheduler.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
+            this.NewSQLScheduler_Energia.DelayedAutoStart = true;
+            this.NewSQLScheduler_Energia.ServiceName = "NewSQLScheduler_Energia";
+            this.NewSQLScheduler_Energia.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 
             // ProjectInstaller
             // 
             this.Installers.AddRange(new System.Configuration.Install.Installer[] {
             this.serviceProcessInstaller1,
-            this.NewSQLScheduler});
+            this.NewSQLScheduler_Energia});
 
         }
 
         #endregion
 
         private System.ServiceProcess.ServiceProcessInstaller serviceProcessInstaller1;
-        private System.ServiceProcess.ServiceInstaller NewSQLScheduler;
+        private System.ServiceProcess.ServiceInstaller NewSQLScheduler_Energia;
     }
 }
