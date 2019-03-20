@@ -121,6 +121,10 @@ namespace NewSQLScheduler_Energia
                                     {
                                         VMU_CONSUMO_KWH = Convert.ToDouble(fields[8].Replace(".", ""));
                                     }
+                                    else
+                                    {
+                                        VMU_CONSUMO_KWH = -1;
+                                    }
  
                                     VMU_TENSAO_FASE1 = Convert.ToDouble(fields[10]);
                                     VMU_TENSAO_FASE2 = Convert.ToDouble(fields[11]);
@@ -154,7 +158,12 @@ namespace NewSQLScheduler_Energia
                     }
 
                     //terminou de ler o arquivo, joga para as tags do Plantsuite.
-                    inserveValorTabelaTag("VMU_CONSUMO_KWH", timestamp, VMU_CONSUMO_KWH);
+
+                    if (VMU_CONSUMO_KWH > -1)
+                    {
+                        inserveValorTabelaTag("VMU_CONSUMO_KWH", timestamp, VMU_CONSUMO_KWH);
+                    }
+
                     inserveValorTabelaTag("VMU_TENSAO_FASE1-N", timestamp, VMU_TENSAO_FASE1);
                     inserveValorTabelaTag("VMU_TENSAO_FASE2-N", timestamp, VMU_TENSAO_FASE2);
                     inserveValorTabelaTag("VMU_TENSAO_FASE3-N", timestamp, VMU_TENSAO_FASE3);
