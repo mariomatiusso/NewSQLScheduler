@@ -35,27 +35,6 @@ namespace NewSQLScheduler
         }
 
 
-
-        //le os arquivos .sql
-        public static string readSqlFile(string path)
-        {
-            string ret = string.Empty;
-
-            try
-            {
-                using (System.IO.StreamReader Sqlfile = new System.IO.StreamReader(path))
-                    ret = Sqlfile.ReadToEnd();
-            }
-            catch
-            {
-                return string.Empty;
-            }
-
-            return ret;
-        }
-
-
-
         public static int executeSQL(string sqlCommand, string selectDatabase, string dataSource, string user, string password)
         {
             string useDataBase = string.Empty;
@@ -64,19 +43,23 @@ namespace NewSQLScheduler
 
             try
             {
-                SqlConnection _con = new SqlConnection("Data Source=" + dataSource + ";User ID=" + user + "; Password=" + password + "; Connect Timeout=60");
-                _con.Open();
-
-                if (!useDataBase.Equals(string.Empty))
+                using (SqlConnection _con = new SqlConnection("Data Source=" + dataSource + ";User ID=" + user + "; Password=" + password + "; Connect Timeout=1200"))
                 {
-                    SqlCommand database = new SqlCommand(useDataBase, _con);
-                    database.ExecuteNonQuery();
+                    _con.Open();
+
+                    if (!useDataBase.Equals(string.Empty))
+                    {
+                        SqlCommand database = new SqlCommand(useDataBase, _con);
+                        database.ExecuteNonQuery();
+                    }
+
+                    SqlCommand cmd = new SqlCommand(sqlCommand, _con);
+                    cmd.CommandTimeout = 1200;
+                    cmd.ExecuteNonQuery();
+
+                    _con.Close();
                 }
-
-                SqlCommand cmd = new SqlCommand(sqlCommand, _con);
-                cmd.ExecuteNonQuery();
-
-                _con.Close();
+               
             }
 
             catch (Exception e)
