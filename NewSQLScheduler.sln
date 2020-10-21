@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewSQLScheduler", "NewSQLScheduler\NewSQLScheduler.csproj", "{6B74C592-6FD2-489F-BA28-CA4570DE9FF8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewSQLScheduler_Energia", "NewSQLScheduler\NewSQLScheduler_Energia.csproj", "{6B74C592-6FD2-489F-BA28-CA4570DE9FF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

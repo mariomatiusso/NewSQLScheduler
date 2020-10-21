@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NewSQLScheduler.Properties {
+namespace NewSQLScheduler_Energia.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
