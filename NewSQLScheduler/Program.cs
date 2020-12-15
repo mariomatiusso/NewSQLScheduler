@@ -5,7 +5,7 @@ using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewSQLScheduler_Energia
+namespace NewSQLScheduler
 {
     static class Program
     {
@@ -17,7 +17,7 @@ namespace NewSQLScheduler_Energia
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
-                new NewSQLScheduler_Energia()
+                new NewSQLScheduler()
             };
             ServiceBase.Run(ServicesToRun);
         }

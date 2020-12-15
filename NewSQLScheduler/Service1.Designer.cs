@@ -1,6 +1,6 @@
-﻿namespace NewSQLScheduler_Energia
+﻿namespace NewSQLScheduler
 {
-    partial class NewSQLScheduler_Energia
+    partial class NewSQLScheduler
     {
         /// <summary> 
         /// Required designer variable.
